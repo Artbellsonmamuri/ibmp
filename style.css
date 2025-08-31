@@ -1163,3 +1163,355 @@ select.region-filter {
     transform: translateY(-10px);
   }
 }
+
+/* Church Badges */
+.church-card__badge {
+    background-color: var(--badge-mission-bg);
+    color: var(--badge-mission);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+.church-card__badge--church {
+    background-color: rgba(var(--color-teal-500-rgb), 0.1);
+    color: var(--color-teal-500);
+}
+
+/* Dark mode church badge */
+@media (prefers-color-scheme: dark) {
+    .church-card__badge--church {
+        background-color: rgba(var(--color-teal-300-rgb), 0.15);
+        color: var(--color-teal-300);
+    }
+}
+
+[data-color-scheme="dark"] .church-card__badge--church {
+    background-color: rgba(var(--color-teal-300-rgb), 0.15);
+    color: var(--color-teal-300);
+}
+
+/* Type Filter */
+.type-filter {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+select.type-filter {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+    background-image: none;
+    padding-right: var(--space-12);
+}
+
+/* Carousel Styles */
+.carousel-container {
+    margin-bottom: var(--space-32);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: var(--color-surface);
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform var(--duration-normal) var(--ease-standard);
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: var(--space-32) var(--space-24) var(--space-24);
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+    color: white;
+}
+
+.carousel-caption p {
+    font-size: var(--font-size-lg);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-standard);
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-btn:hover {
+    background-color: white;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn--prev {
+    left: var(--space-16);
+}
+
+.carousel-btn--next {
+    right: var(--space-16);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--space-16);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-8);
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.carousel-indicator.active,
+.carousel-indicator:hover {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Advertisement Section */
+.advertisement {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: white;
+    padding: var(--space-32) 0;
+    margin-top: var(--space-32);
+}
+
+.advertisement__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-20);
+}
+
+.advertisement__icon {
+    font-size: var(--font-size-4xl);
+    opacity: 0.9;
+}
+
+.advertisement__text h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+    color: white;
+}
+
+.advertisement__text p {
+    font-size: var(--font-size-lg);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: var(--line-height-normal);
+}
+
+.advertisement__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    width: 100%;
+    max-width: 400px;
+}
+
+.advertisement__actions .btn {
+    background-color: white;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-12) var(--space-24);
+    border-radius: var(--radius-base);
+    text-decoration: none;
+    transition: all var(--duration-fast) var(--ease-standard);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+}
+
+.advertisement__actions .btn:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.advertisement__actions .btn--secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.advertisement__actions .btn--secondary:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+/* Responsive Design Updates */
+@media (min-width: 640px) {
+    .header__controls {
+        min-width: 500px;
+    }
+
+    .filter-container {
+        min-width: 140px;
+    }
+
+    .type-filter {
+        min-width: 120px;
+    }
+
+    .carousel {
+        height: 450px;
+    }
+
+    .carousel-caption {
+        text-align: left;
+        padding: var(--space-32) var(--space-32) var(--space-24);
+    }
+
+    .advertisement__content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .advertisement__text {
+        flex: 1;
+        margin-right: var(--space-24);
+    }
+
+    .advertisement__actions {
+        flex-direction: row;
+        flex-shrink: 0;
+        width: auto;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel {
+        height: 500px;
+    }
+
+    .carousel-caption h3 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .carousel-caption p {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Accessibility improvements for carousel */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slides {
+        transition: none;
+    }
+
+    .carousel-btn:hover {
+        transform: translateY(-50%);
+    }
+
+    .carousel-indicator:hover {
+        transform: none;
+    }
+}
+
+/* Focus styles for carousel controls */
+.carousel-btn:focus-visible,
+.carousel-indicator:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        padding: var(--space-16);
+    }
+
+    .carousel-caption h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    .carousel-caption p {
+        font-size: var(--font-size-base);
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn--prev {
+        left: var(--space-8);
+    }
+
+    .carousel-btn--next {
+        right: var(--space-8);
+    }
+}

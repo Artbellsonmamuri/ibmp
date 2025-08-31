@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Directory of Baptist fellowshipping churches in Ilocandia">
     <title>Ilocandia Baptist Mission Partners - Church Directory</title>
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ilocandia Baptist Mission Partners - Church Directory">
     <meta property="og:description" content="Directory of Baptist fellowshipping churches in Ilocandia">
     <meta property="og:url" content="https://ibmp.bbcbarani.org/">
     <meta property="og:type" content="website">
-    
+
     <!-- Canonical Link -->
     <link rel="canonical" href="https://ibmp.bbcbarani.org/">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
@@ -48,6 +48,14 @@
                             <option value="Isabela">Isabela</option>
                         </select>
                     </div>
+                    <div class="filter-container">
+                        <label for="type-filter" class="sr-only">Filter by type</label>
+                        <select id="type-filter" class="form-control type-filter" aria-label="Filter churches by type">
+                            <option value="">All Types</option>
+                            <option value="church">Church</option>
+                            <option value="mission">Mission</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,6 +64,46 @@
     <!-- Main Content -->
     <main class="main" id="main">
         <div class="container">
+            <!-- Image Carousel -->
+            <div class="carousel-container" id="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slides" id="carousel-slides">
+                        <div class="carousel-slide active">
+                            <img src="https://via.placeholder.com/800x400/2b6cb0/ffffff?text=Baptist+Churches+in+Ilocandia" alt="Baptist Churches in Ilocandia" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Fellowship of Baptist Churches</h3>
+                                <p>Serving communities across Ilocandia with the Gospel</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/800x400/1d4ed8/ffffff?text=Church+Community" alt="Church Community" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Building Strong Communities</h3>
+                                <p>United in faith, growing together in Christ</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/800x400/059669/ffffff?text=Mission+Work" alt="Mission Work" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Mission Work</h3>
+                                <p>Planting churches and spreading the Word</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <button class="carousel-indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                        <button class="carousel-indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                        <button class="carousel-indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                    </div>
+                </div>
+            </div>
+
             <div class="churches-grid" id="churches-grid">
                 <!-- Church cards will be dynamically inserted here -->
             </div>
@@ -68,6 +116,31 @@
             </div>
         </div>
     </main>
+
+    <!-- Advertisement Section -->
+    <section class="advertisement" id="advertisement">
+        <div class="container">
+            <div class="advertisement__content">
+                <div class="advertisement__icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="advertisement__text">
+                    <h3>Need to Update Your Church Information?</h3>
+                    <p>If you need to correct any information displayed here or would like to create a professional website for your church, please contact us.</p>
+                </div>
+                <div class="advertisement__actions">
+                    <a href="mailto:artbellsonmamuri@gmail.com" class="btn btn--primary">
+                        <i class="fas fa-envelope"></i>
+                        Email Us
+                    </a>
+                    <a href="tel:+639482920644" class="btn btn--secondary">
+                        <i class="fas fa-phone"></i>
+                        Call: 09482920644
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -94,7 +167,8 @@
           "website": "https://bbcbarani.org",
           "mapsUrl": "https://www.google.com/maps/place/Bible+Baptist+Church+-+Batac+City,+Ilocos+Norte/@18.0505024,120.5641752,17z/data=!3m1!4b1!4m6!3m5!1s0x338ec036d557cc1f:0xf4fa32c43149adc3!8m2!3d18.0505024!4d120.5641752!16s%2Fg%2F1hc33dqz5?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Norte",
-          "town": "Batac"
+          "town": "Batac",
+          "type": "church"
         },
         {
           "name": "Sinait Bible Baptist Church",
@@ -103,43 +177,38 @@
           "contact": {},
           "mapsUrl": "https://www.google.com/maps/place/Sinait+Bible+Baptist+Church/@17.8462143,120.4540065,17z/data=!3m1!4b1!4m6!3m5!1s0x338e8dc985d892d7:0x9255e259f4673ec8!8m2!3d17.8462143!4d120.4565814!16s%2Fg%2F11j2djh7ws?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Sur",
-          "town": "Sinait"
+          "town": "Sinait",
+          "type": "church"
         },
         {
           "name": "Family Baptist Church Buyon",
           "address": "Buyon, Ilocos Norte",
           "pastor": "Ptr. Rey Alipio",
           "contact": {},
-          "mapsUrl": "https://www.google.com/maps/place/Family+Bible+Baptist+Church+-+Buyon/@18.2292886,120.616046,20.06z/data=!4m14!1m7!3m6!1s0x338ec9005c4db703:0x37d46e922822de5b!2sFamily+Bible+Baptist+Church+-+Buyon!8m2!3d18.2292488!4d120.6163296!16s%2Fg%2F11y91_b1vp!3m5!1s0x338ec9005c4db703:0x37d46e922822de5b!8m2!3d18.2292488!4d120.6163296!16s%2Fg%2F11y91_b1vp?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+          "mapsUrl": "https://www.google.com/maps/place/Family+Bible+Baptist+Church+-+Buyon/@18.2292886,120.616046,20.06z/data=!4m14!1m7!3m6!1s0x338ec9005c4db703:0x37d46e922822de5b!2sFamily+Bible+Baptist+Church+-+Buyon!8m2!3d18.2292488!4d120.6163296!16s%2Fg%2F11y91_b1vp!3m5!1s0x338ec9005c4db703:0x37d46e922822de5b!8m2!3d18.2292488!4d120.6163296!16s%2Fg%2F11y91_b1vp?entry=ttu&g_ep=EgoyMDI1082NV4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Norte",
-          "town": "Buyon"
+          "town": "Buyon",
+          "type": "church"
         },
         {
           "name": "Pallas Valley Baptist Church",
           "address": "Pallas Valley, Ilocos Norte",
           "pastor": "Ptr. Leonard Saguid",
           "contact": {},
-          "mapsUrl": "https://www.google.com/maps/place/Pallas+Valley+Baptist+Church/@18.2165994,120.6876311,17z/data=!3m1!4b1!4m6!3m5!1s0x338ecf8bd23554df:0xc8a5a00be737207d!8m2!3d18.2165995!4d120.692502!16s%2Fg%2F11vl9_15v2?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+          "mapsUrl": "https://www.google.com/maps/place/Pallas+Valley+Baptist+Church/@18.1319745,120.6478435,17z/data=!3m1!4b1!4m6!3m5!1s0x338ec5004f2a81c3:0xfbe07d82183269ee!8m2!3d18.1319745!4d120.6504184!16s%2Fg%2F11wmvwq5np?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Norte",
-          "town": "Pallas Valley"
-        },
-        {
-          "name": "Calvary Baptist Church",
-          "address": "Ilocos Norte",
-          "pastor": "Ptr. Johmar L. Pedronan",
-          "contact": {},
-          "mapsUrl": "https://www.google.com/maps/place/Calvary+Baptist+Church/@18.1760809,120.5899917,15z/data=!4m6!3m5!1s0x338ec64722f8adf7:0x63872f31611fb9ab!8m2!3d18.1759966!4d120.5899405!16s%2Fg%2F1hdz6t0kj?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
-          "region": "Ilocos Norte",
-          "town": "Ilocos Norte"
+          "town": "Pallas Valley",
+          "type": "church"
         },
         {
           "name": "Faith Bible Baptist Church Sarrat",
-          "address": "Sarah, Ilocos Norte",
-          "pastor": "Ptr. Rosbelt B. Dorilag",
+          "address": "Sarrat, Ilocos Norte",
+          "pastor": "Ptr. Joshen Rafael",
           "contact": {},
           "mapsUrl": "https://www.google.com/maps/place/Faith+Bible+Baptist+Church-Sarrat/@18.1319745,120.6478435,17z/data=!3m1!4b1!4m6!3m5!1s0x338ec5004f2a81c3:0xfbe07d82183269ee!8m2!3d18.1319745!4d120.6504184!16s%2Fg%2F11wmvwq5np?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Norte",
-          "town": "Sarah"
+          "town": "Sarah",
+          "type": "church"
         },
         {
           "name": "Ohana Baptist Church Paoay",
@@ -148,7 +217,8 @@
           "contact": {},
           "mapsUrl": "https://www.google.com/maps/place/18%C2%B003'29.5%22N+120%C2%B031'13.5%22E/@18.058184,120.520426,882m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d18.058184!4d120.520426?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
           "region": "Ilocos Norte",
-          "town": "Paoay"
+          "town": "Paoay",
+          "type": "church"
         },
         {
           "name": "Currimao Bible Baptist Church",
@@ -157,7 +227,8 @@
           "contact": {},
           "mapsUrl": "https://maps.google.com/?q=Currimao,+Ilocos+Norte",
           "region": "Ilocos Norte",
-          "town": "Currimao"
+          "town": "Currimao",
+          "type": "church"
         },
         {
           "name": "First Baptist Church",
@@ -166,7 +237,8 @@
           "contact": {},
           "mapsUrl": "https://maps.app.goo.gl/nws9eZ64fQFd4Lnn8",
           "region": "Isabela",
-          "town": "Echague"
+          "town": "Echague",
+          "type": "church"
         },
         {
           "name": "First Baptist Church Sta. Monica",
@@ -175,7 +247,8 @@
           "contact": {},
           "mapsUrl": "https://maps.google.com/?q=Sta.+Monica,+Echague",
           "region": "Echague",
-          "town": "Sta. Monica"
+          "town": "Sta. Monica",
+          "type": "church"
         },
         {
           "name": "Christian Baptist Church Cauayan",
@@ -184,7 +257,8 @@
           "contact": {},
           "mapsUrl": "https://maps.app.goo.gl/WwxS3bW5FP4LNtnR6",
           "region": "Isabela",
-          "town": "Cauayan"
+          "town": "Cauayan",
+          "type": "church"
         },
         {
           "name": "Candon Bible Baptist Mission",
