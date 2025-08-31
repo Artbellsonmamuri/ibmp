@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory of Baptist fellowshipping churches in Ilocandia">
+    <title>Ilocandia Baptist Mission Partners - Church Directory</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ilocandia Baptist Mission Partners - Church Directory">
+    <meta property="og:description" content="Directory of Baptist fellowshipping churches in Ilocandia">
+    <meta property="og:url" content="https://ibmp.bbcbarani.org/">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://ibmp.bbcbarani.org/">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Ilocandia Baptist Mission Partners</h1>
+                <div class="header__controls">
+                    <div class="search-container">
+                        <label for="search-input" class="sr-only">Search churches by name, pastor, or location</label>
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            class="form-control search-input" 
+                            placeholder="Search churches, pastors, or locations..."
+                            aria-label="Search churches by name, pastor, or location"
+                        >
+                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="filter-container">
+                        <label for="region-filter" class="sr-only">Filter by region</label>
+                        <select id="region-filter" class="form-control region-filter" aria-label="Filter churches by region">
+                            <option value="">All Regions</option>
+                            <option value="Ilocos Norte">Ilocos Norte</option>
+                            <option value="Ilocos Sur">Ilocos Sur</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <div class="container">
+            <div class="churches-grid" id="churches-grid">
+                <!-- Church cards will be dynamically inserted here -->
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <div class="no-results__content">
+                    <i class="fas fa-search no-results__icon" aria-hidden="true"></i>
+                    <h3>No churches found</h3>
+                    <p>Try adjusting your search or filter criteria.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p>&copy; 2025 Ilocandia Baptist Mission Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Church Data -->
+    <script type="application/json" id="church-data">
+    {
+      "organization": "Ilocandia Baptist Mission Partners",
+      "churches": [
+        {
+          "name": "Bible Baptist Church Barani",
+          "address": "10-S Sacro St., Brgy. Barani, City of Batac, Ilocos Norte 2906",
+          "pastor": "Ptr. Samuel L. Rafael",
+          "contact": {
+            "phone": "+63 948 292 0644",
+            "email": "biblebapbarani@gmail.com"
+          },
+          "website": "https://bbcbarani.org",
+          "mapsUrl": "https://maps.google.com/?q=10-S+Sacro+St,+Barani,+Batac+City,+Ilocos+Norte+2906",
+          "region": "Ilocos Norte",
+          "town": "Batac"
+        },
+        {
+          "name": "Sinait Bible Baptist Church",
+          "address": "Sinait, Ilocos Sur",
+          "pastor": "Ptr. Edmund Arrocena",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Sinait,+Ilocos+Sur",
+          "region": "Ilocos Sur",
+          "town": "Sinait"
+        },
+        {
+          "name": "Family Baptist Church Buyon",
+          "address": "Buyon, Ilocos Norte",
+          "pastor": "Ptr. Rey Alipio",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Buyon,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Buyon"
+        },
+        {
+          "name": "Pallas Valley Baptist Church",
+          "address": "Pallas Valley, Ilocos Norte",
+          "pastor": "Ptr. Leonard Saguid",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Pallas+Valley,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Pallas Valley"
+        },
+        {
+          "name": "Calvary Baptist Church",
+          "address": "Ilocos Norte",
+          "pastor": "Ptr. Johmar L. Pedronan",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Calvary+Baptist+Church,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Ilocos Norte"
+        },
+        {
+          "name": "Faith Bible Baptist Church Sarah",
+          "address": "Sarah, Ilocos Norte",
+          "pastor": "Ptr. Rosbelt B. Dorilag",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Sarah,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Sarah"
+        },
+        {
+          "name": "Ohana Baptist Church Paoay",
+          "address": "Paoay, Ilocos Norte",
+          "pastor": "Ptr. Steve Dela Cruz",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Paoay,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Paoay"
+        },
+        {
+          "name": "Currimao Bible Baptist Church",
+          "address": "Currimao, Ilocos Norte",
+          "pastor": "Ptr. Laverne Coili",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Currimao,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Currimao"
+        },
+        {
+          "name": "First Baptist Church",
+          "address": "Ilocos Norte",
+          "pastor": "Ptr. Jeruel Selmo",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=First+Baptist+Church,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Ilocos Norte"
+        },
+        {
+          "name": "First Baptist Church Sta. Monica",
+          "address": "Sta. Monica, Ilocos Norte",
+          "pastor": "Ptr. Robert Assuncion",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Sta.+Monica,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Sta. Monica"
+        },
+        {
+          "name": "Christian Baptist Church Cauayan",
+          "address": "Cauayan, Ilocos Norte",
+          "pastor": "Ptr. Joshua Jimenez",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Cauayan,+Ilocos+Norte",
+          "region": "Ilocos Norte",
+          "town": "Cauayan"
+        },
+        {
+          "name": "Candon Bible Baptist Mission",
+          "address": "Candon, Ilocos Sur",
+          "pastor": "Preacher Romie Deal Cruz",
+          "contact": {},
+          "mapsUrl": "https://maps.google.com/?q=Candon,+Ilocos+Sur",
+          "region": "Ilocos Sur",
+          "town": "Candon",
+          "type": "mission"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="app.js" defer></script>
+</body>
+</html>
